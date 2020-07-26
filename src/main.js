@@ -1,20 +1,12 @@
 import { ComponentRegistry } from 'mailspring-exports';
 import { ExtensionRegistry } from 'mailspring-exports';
 
-import MyComposerButton from './my-composer-button';
-import MyMessageSidebar from './my-message-sidebar';
 import MyCodeFormatter from './my-code-formatter';
 
 // Activate is called when the package is loaded. If your package previously
 // saved state using `serialize` it is provided.
 //
 export function activate() {
-  ComponentRegistry.register(MyComposerButton, {
-    role: 'Composer:ActionButton',
-  });
-  ComponentRegistry.register(MyMessageSidebar, {
-    role: 'MessageListSidebar:ContactCard',
-  });
   ExtensionRegistry.MessageView.register(MyCodeFormatter);
 }
 
@@ -30,7 +22,5 @@ export function serialize() {}
 // subscribing to events, release them here.
 //
 export function deactivate() {
-  ComponentRegistry.unregister(MyComposerButton);
-  ComponentRegistry.unregister(MyMessageSidebar);
   ExtensionRegistry.MessageView.unregister(MyCodeFormatter);
 }
