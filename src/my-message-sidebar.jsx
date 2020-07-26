@@ -43,7 +43,7 @@ export default class MyMessageSidebar extends React.Component {
     //
     return (
       <div className="header">
-        <h1>{this.state.contact.displayName()} is the focused contact.</h1>
+        <h1>{this.state.contact.displayName()} is the focused contact!</h1>
       </div>
     );
   }
@@ -53,6 +53,7 @@ export default class MyMessageSidebar extends React.Component {
   }
 
   render() {
+    console.log("Well hello there");
     const content = this.state.contact
       ? this._renderContent()
       : this._renderPlaceholder();

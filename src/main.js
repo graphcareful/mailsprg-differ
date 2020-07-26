@@ -1,4 +1,5 @@
 import { ComponentRegistry } from 'mailspring-exports';
+import { ExtensionRegistry } from 'mailspring-exports';
 
 import MyComposerButton from './my-composer-button';
 import MyMessageSidebar from './my-message-sidebar';
@@ -14,10 +15,7 @@ export function activate() {
   ComponentRegistry.register(MyMessageSidebar, {
     role: 'MessageListSidebar:ContactCard',
   });
-  // message-iframe-container
-  ComponentRegistry.register(MyCodeFormatter, {
-    role: '???'
-  })
+  ExtensionRegistry.MessageView.register(MyCodeFormatter);
 }
 
 // Serialize is called when your package is about to be unmounted.
@@ -34,5 +32,5 @@ export function serialize() {}
 export function deactivate() {
   ComponentRegistry.unregister(MyComposerButton);
   ComponentRegistry.unregister(MyMessageSidebar);
-  ComponentRegistry.unregister(MyCodeFormatter)
+  ExtensionRegistry.MessageView.unregister(MyCodeFormatter);
 }
