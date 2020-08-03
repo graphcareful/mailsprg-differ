@@ -1,4 +1,3 @@
-import { ComponentRegistry } from 'mailspring-exports';
 import { ExtensionRegistry } from 'mailspring-exports';
 
 import MyCodeFormatter from './my-code-formatter';

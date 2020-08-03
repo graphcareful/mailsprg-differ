@@ -12,4 +12,5 @@ cd ~/.config/Mailspring
 if [ ! -d packages ]; then
     mkdir packages
 fi
+cd packages
 ln -s $root .
