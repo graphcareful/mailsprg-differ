@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
 
+sudo dnf install -y npm nodejs-typescript
+
 root=$(git rev-parse --show-toplevel)
 cd $root
 npm run-script build
